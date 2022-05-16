@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@actions/core": "^1.8.2",
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.4"
+  },
+  "name": "recreate-portainer-action",
+  "description": "access portainer and recreate docker container",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antn9x/recreate-portainer-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antn9x/recreate-portainer-action/issues"
+  },
+  "homepage": "https://github.com/antn9x/recreate-portainer-action#readme"
+}

@@ -1,0 +1,18 @@
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  portainer-host:
+    description: 'Host deployed portainer'
+    required: true
+  username:
+    description: 'username of portainer'
+    required: true
+  password:
+    description: 'password of portainer'
+    required: true
+  container-name:
+    description: 'name of container need to recreate'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
