@@ -1,14 +1,8 @@
 name: 'Recreate container action'
 description: 'access portainer and recreate docker container'
 inputs:
-  portainer-host:
-    description: 'Host deployed portainer'
-    required: true
-  username:
-    description: 'username of portainer'
-    required: true
-  password:
-    description: 'password of portainer'
+  portainer-connect-uri:
+    description: 'username@password@Host to connect portainer'
     required: true
   stack-id:
     description: 'id of current stack'

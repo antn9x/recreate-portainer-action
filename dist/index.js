@@ -7040,7 +7040,8 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(9251);
 const axios = __nccwpck_require__(7014);
 
-async function recreate(host, username, password, stackId, imageUri) {
+async function recreate(connectUri, stackId, imageUri) {
+  const [username, password, host] = connectUri.split('@');
   axios.defaults.baseURL = host;
   axios.defaults.headers.post['Content-Type'] = 'application/json';
   const auth = await axios.post('/auth', { username, password })
@@ -7048,9 +7049,9 @@ async function recreate(host, username, password, stackId, imageUri) {
   axios.defaults.headers.common.Authorization = `Bearer ${auth.data.jwt}`;
 
   const registries = await axios.get(`/endpoints/${stackId}/registries`)
-  // console.log(registries.data)
   const ghRegistry = registries.data.find((reg) => reg.URL.includes('ghcr.io'))
   const listContainers = await axios.get(`/endpoints/${stackId}/docker/containers/json?all=1`)
+  console.log(listContainers.data)
   const selected = listContainers.data.find((container) => container.Image === imageUri);
   const containerName = selected.Names[0].slice(1);
   // console.log(containerName)
