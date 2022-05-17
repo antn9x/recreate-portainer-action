@@ -50,14 +50,10 @@ async function recreate(connectUri, stackId, imageUri) {
 }
 
 try {
-  const portainerHost = core.getInput('portainer-host');
-  const username = core.getInput('username');
-  const password = core.getInput('password');
+  const portainerHost = core.getInput('portainer-connect-uri');
   const stackId = core.getInput('stack-id');
   const imageUri = core.getInput('image-uri');
   // console.log(`portainerHost: ${portainerHost}!`);
-  // console.log(`username: ${username}!`);
-  // console.log(`password: ${password}!`);
   // console.log(`imageUri: ${imageUri}!`);
   recreate(portainerHost, username, password, stackId, imageUri);
 } catch (error) {
