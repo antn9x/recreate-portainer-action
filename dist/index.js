@@ -7094,7 +7094,7 @@ try {
   const imageUri = core.getInput('image-uri');
   // console.log(`portainerHost: ${portainerHost}!`);
   // console.log(`imageUri: ${imageUri}!`);
-  recreate(portainerHost, username, password, stackId, imageUri);
+  recreate(portainerHost, stackId, imageUri);
 } catch (error) {
   core.setFailed(error.message);
 }
