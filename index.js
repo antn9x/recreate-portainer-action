@@ -12,7 +12,7 @@ async function recreate(connectUri, stackId, imageUri) {
   const registries = await axios.get(`/endpoints/${stackId}/registries`)
   const ghRegistry = registries.data.find((reg) => reg.URL.includes('ghcr.io'))
   const listContainers = await axios.get(`/endpoints/${stackId}/docker/containers/json?all=1`)
-  console.log(listContainers.data)
+  // console.log(listContainers.data)
   const selected = listContainers.data.find((container) => imageUri.includes(container.Image));
   const containerName = selected.Names[0].slice(1);
   // console.log(containerName)

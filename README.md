@@ -9,6 +9,7 @@ access portainer and recreate docker container
   with:
     portainer-connect-uri: ${{ secrets.PORTAINER_CONNECT_URI }}
     stack-id: 2
-    container-name: ${{ steps.meta.outputs.tags }}
+    image-uri: ${{ steps.meta.outputs.tags }}
 `
 - Add secrets.PORTAINER_CONNECT_URI to your github repo
+- URI format: username@password@Host
