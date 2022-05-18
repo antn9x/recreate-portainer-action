@@ -7,7 +7,7 @@ inputs:
   stack-id:
     description: 'id of current stack'
     required: true
-  container-name:
+  image-uri:
     description: 'name of container need to recreate'
     required: true
 runs:
